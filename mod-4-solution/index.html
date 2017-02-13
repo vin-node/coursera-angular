@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Menu App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="src/data.module.js"></script>
+    <script src="src/spinner/spinner.module.js"></script>
+    <script src="src/spinner/loadingspinner.component.js"></script>
+    <script src="src/menudata.service.js"></script>
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/navbar.controller.js"></script>
+    <script src="src/categories.component.js"></script>
+    <script src="src/category-list.controller.js"></script>
+    <script src="src/items.component.js"></script>
+    <script src="src/items-list.controller.js"></script>
+    <script src="src/routes.js"></script>
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app="MenuApp">
+  <nav class="navbar navbar-default" ng-controller="NavbarController as navCtrl">
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	        </div>
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	            <ul class="nav navbar-nav">
+	                <li ng-class="{ active: navCtrl.isActive('/')}" ><a ui-sref="home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home </a></li>
+	                <li ng-class="{ active: navCtrl.isActive('/categories')}"><a ui-sref="categories"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Categories </a></li>
+	                <li ng-class="{ active: navCtrl.isActive('/itemsList')}"><a href="#/itemsList/L" ><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Menu Items</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="container-fluid">
+        <ui-view></ui-view>
+        </div>
+      </div>
+    </div>
+    <loading-spinner></loading-spinner>
+</body>
+</html>

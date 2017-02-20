@@ -36,9 +36,11 @@
         <div class="col-sm-2">
             Favorite Menu
         </div>
-        <div class="col-sm-2">
-            {{myInfoCtrl.user.favoriteMenuName}}
-        </div>
+        <menu-category category="myInfoCtrl.user.favoriteCategory">
+        </menu-category>
+    </div>
+    <div class="row">
+      {{signUpCtrl.user.favoriteCategory | json}}
     </div>
 </div>
 

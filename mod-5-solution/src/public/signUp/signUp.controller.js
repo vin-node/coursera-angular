@@ -8,6 +8,7 @@
     var signUpCtrl = this;
     signUpCtrl.user = {};
     signUpCtrl.message= "";
+    signUpCtrl.signUpSuccess="";
     signUpCtrl.subscribe = function () {
       signUpCtrl.completed = true;
 
@@ -16,11 +17,13 @@
         if(response.menu_items.length>0){
           signUpCtrl.user.favoriteMenu = signUpCtrl.user.favoriteMenu;
           signUpCtrl.user.favoriteMenuName = response.category.name;
+          signUpCtrl.user.favoriteCategory = response.category;
           UserService.saveUser(signUpCtrl.user);
           signUpCtrl.message ="";
-          $location.path('/myInfo');
+          signUpCtrl.signUpSuccess="Your information has been saved.";
         }
         else{
+          signUpCtrl.signUpSuccess="";
           signUpCtrl.message = "Invalid menu number";
         }
        })

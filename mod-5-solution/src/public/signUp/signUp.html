@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Sign Up for Emails</h1>
   <fieldset class="col-sm-5">
+
       <!-- <legend>Registration</legend> -->
       <form name='signUpForm' novalidate>
           <div class="form-group">
@@ -64,5 +65,8 @@
           <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid"
           ng-click="signUpCtrl.subscribe()">Save my info</button>
       </form>
+      <div ng-if="signUpCtrl.signUpSuccess" class="row">
+        {{signUpCtrl.signUpSuccess}}
+      </div>
     </fieldset>
 </div>

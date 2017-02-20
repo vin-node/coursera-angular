@@ -32,7 +32,16 @@
             {{myInfoCtrl.user.phone}}
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Favorite Menu
+        </div>
+        <div class="col-sm-2">
+            {{myInfoCtrl.user.favoriteMenuName}}
+        </div>
+    </div>
 </div>
+
 <div ng-if="!myInfoCtrl.user" class="container">
     <h1>Sign Up for Emails</h1>
     <div class="row">

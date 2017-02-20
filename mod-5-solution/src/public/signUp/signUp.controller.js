@@ -14,6 +14,8 @@
       var promise = MenuService.getMenuItems(signUpCtrl.user.favoriteMenu);
        promise.then(function(response){
         if(response.menu_items.length>0){
+          signUpCtrl.user.favoriteMenu = signUpCtrl.user.favoriteMenu;
+          signUpCtrl.user.favoriteMenuName = response.category.name;
           UserService.saveUser(signUpCtrl.user);
           signUpCtrl.message ="";
           $location.path('/myInfo');

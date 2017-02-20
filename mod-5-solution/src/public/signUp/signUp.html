@@ -43,6 +43,7 @@
             <input type="text" name="userPhone" class="form-control"
                    id="userPhone" placeholder="Phone ###-###-####"
                    ng-model = "signUpCtrl.user.phone"
+                   required
                    aria-describedby="phoneHelp"
                    pattern="(\(\d{3}\)|\d{3})[- ]\d{3}[- ]\d{4}">
             <span ng-if="signUpForm.userPhone.$invalid && signUpForm.userPhone.$touched">
@@ -53,12 +54,9 @@
             <label for="favoriteMenu">Favorite dish menu number</label>
             <input type="text" name="favoriteMenu" class="form-control" id="favoriteMenu"
                    ng-model = "signUpCtrl.user.favoriteMenu"
-                   required
                    aria-describedby="favoriteMenuHelp"
                    placeholder="Enter Favorite menu number ">
-            <span ng-if="signUpForm.favoriteMenu.$invalid && signUpForm.favoriteMenu.$touched">
-              Favorite dish menu number is required to sign up
-            </span>
+                   <small>Enter one of the following L, A, B, C or VG...</small>
             <span ng-if="signUpCtrl.message">
               {{signUpCtrl.message}}
             </span>

@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>Sign Up for Emails</h1>
+  <fieldset class="col-sm-5">
+      <!-- <legend>Registration</legend> -->
+      <form name='signUpForm' novalidate>
+          <div class="form-group">
+            <label for="userFirstName">First Name</label>
+            <input type="text" name="userFirstName" class="form-control" id="userFirstName"
+                   ng-model = "signUpCtrl.user.firstName"
+                   required
+                   minlength="1"
+                   aria-describedby="firstNameHelp" placeholder="Enter First Name">
+             <span
+                ng-if="(signUpForm.userFirstName.$error.minlength || signUpForm.userFirstName.$error.required) && signUpForm.userFirstName.$touched">
+                First Name is required to sign up
+              </span>
+          </div>
+          <div class="form-group">
+            <label for="userLastName">Last Name</label>
+            <input type="text" name="userLastName" class="form-control" id="userLastName"
+                   ng-model = "signUpCtrl.user.lastName"
+                   required
+                   minlength="1"
+                   aria-describedby="lastNameHelp" placeholder="Enter Last Name">
+             <span
+                ng-if="(signUpForm.userLastName.$error.minlength || signUpForm.userLastName.$error.required) && signUpForm.userLastName.$touched">
+                Last Name is required to sign up
+              </span>
+          </div>
+
+          <div class="form-group">
+            <label for="userEmail">Email address</label>
+            <input type="email" name="userEmail" class="form-control" id="userEmail"
+                   ng-model = "signUpCtrl.user.email"
+                   required
+                   aria-describedby="emailHelp" placeholder="Enter email">
+             <span ng-if="signUpForm.userEmail.$invalid && signUpForm.userEmail.$touched">
+               Must be a valid email address: user@domain format
+             </span>
+          </div>
+          <div class="form-group">
+            <label for="userPhone">Phone number</label>
+            <input type="text" name="userPhone" class="form-control"
+                   id="userPhone" placeholder="Phone ###-###-####"
+                   ng-model = "signUpCtrl.user.phone"
+                   aria-describedby="phoneHelp"
+                   pattern="(\(\d{3}\)|\d{3})[- ]\d{3}[- ]\d{4}">
+            <span ng-if="signUpForm.userPhone.$invalid && signUpForm.userPhone.$touched">
+              Phone must be in the format ###-###-####
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="favoriteMenu">Favorite dish menu number</label>
+            <input type="text" name="favoriteMenu" class="form-control" id="favoriteMenu"
+                   ng-model = "signUpCtrl.user.favoriteMenu"
+                   required
+                   aria-describedby="favoriteMenuHelp"
+                   placeholder="Enter Favorite menu number ">
+            <span ng-if="signUpForm.favoriteMenu.$invalid && signUpForm.favoriteMenu.$touched">
+              Favorite dish menu number is required to sign up
+            </span>
+            <span ng-if="signUpCtrl.message">
+              {{signUpCtrl.message}}
+            </span>
+          </div>
+          <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid"
+          ng-click="signUpCtrl.subscribe()">Save my info</button>
+      </form>
+    </fieldset>
+</div>

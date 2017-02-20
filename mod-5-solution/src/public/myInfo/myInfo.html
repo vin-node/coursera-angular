@@ -1,0 +1,43 @@
+<div ng-if="myInfoCtrl.user" class="container">
+    <h1>My Info</h1>
+    <div class="row">
+        <div class="col-sm-2">
+            First Name
+        </div>
+        <div class="col-sm-2">
+            {{myInfoCtrl.user.firstName}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Last Name
+        </div>
+        <div class="col-sm-2">
+            {{myInfoCtrl.user.lastName}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Email
+        </div>
+        <div class="col-sm-2">
+            {{myInfoCtrl.user.email}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Phone
+        </div>
+        <div class="col-sm-2">
+            {{myInfoCtrl.user.phone}}
+        </div>
+    </div>
+</div>
+<div ng-if="!myInfoCtrl.user" class="container">
+    <h1>Sign Up for Emails</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <a ui-sref="public.signUp">Please Sign Up here</a>
+        </div>
+    </div>
+</div>

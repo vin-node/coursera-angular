@@ -1,5 +1,4 @@
 # coursera-angular
----
 * [mod-1-solution](https://vin-node.github.io/coursera-angular/mod-1-solution/)
 ---
 * [mod-2-solution](https://vin-node.github.io/coursera-angular/mod-2-solution/)

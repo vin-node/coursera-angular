@@ -17,6 +17,15 @@
         $scope.borderColor = "invalid";
         return;
       }
+    /*
+
+
+
+    asdf'pkdsapfkpdoskfas
+
+    */
+
+
 
       $scope.fontColor ="green";
       $scope.borderColor = "valid";
